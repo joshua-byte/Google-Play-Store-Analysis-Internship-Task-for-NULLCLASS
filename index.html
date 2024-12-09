@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Play Store Analysis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* CSS Code */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+    }
+
+    h1 {
+      color: #2d3e50;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /*  Play Store Icon */
+    .google-play-icon {
+      width: 40px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    /* Container for each section */
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.6em;
+      color: #2a3b4c;
+      margin-bottom: 10px;
+    }
+
+    /* image container */
+    .visualization img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .visualization img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /*  for descriptions */
+    .description {
+      font-size: 1em;
+      color: #555;
+      margin-top: 15px;
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    /* Conclusion Section */
+    .conclusions {
+      max-width: 900px;
+      width: 100%;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 25px;
+    }
+
+    .conclusions h3 {
+      font-size: 1.6em;
+      color: #2a3b4c;
+      margin-bottom: 10px;
+    }
+
+    .conclusions ul {
+      font-size: 1em;
+      color: #555;
+      line-height: 1.6;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>
+    <img src="https://www.gstatic.com/android/market_images/web/favicon_v2.ico" class="google-play-icon" alt="Google Play Store Icon">
+    Google Play Store Analysis
+  </h1>
+
+  <!-- Top 5 Categories by Installs Section -->
+  <div class="container">
+    <h2>Top 5 Categories by Installs</h2>
+    <div class="visualization">
+      <img src="output.png" alt="Top 5 Categories by Installs">
+    </div>
+    <p class="description">
+      This bar chart visualizes the top 5 app categories by the number of installs, showing which categories are the most popular based on user downloads. Each bar represents a category, with the height indicating total installs, offering quick insights into which categories have the highest user engagement and market reach.
+    </p>
+  </div>
+
+  <!-- Bubble Chart -->
+  <div class="container">
+    <h2>Bubble Chart: Installs by Category</h2>
+    <div class="visualization">
+      <img src="output1.png" alt="Bubble Chart: Installs by Category">
+    </div>
+    <p class="description">
+      The bubble chart illustrates the number of installs across the top 5 categories, with bubble size representing install counts for each app within a category. This visualization brings out individual app popularity within each category, allowing us to identify top-performing apps.
+    </p>
+  </div>
+
+  <!-- Bar Chart Section -->
+  <div class="container">
+    <h2>Top 5 Categories by Installs (Conditional Display)</h2>
+    <div class="visualization">
+      <img src="output2.png" alt="Conditional Top 5 Categories by Installs">
+    </div>
+    <p class="description">
+      This bar chart displays the top 5 categories by installs, only outside of the hours between 12 PM and 6 PM. This feature can be useful for managing access to specific visualizations based on time, potentially helping with server load balancing and focus on specific insights.
+    </p>
+  </div>
+
+  <!-- Violin Plot -->
+  <div class="container">
+    <h2>Distribution of Ratings by App Category (Filtered)</h2>
+    <div class="visualization">
+      <img src="output3.png" alt="Distribution of Ratings by App Category (Filtered)">
+    </div>
+    <p class="description">
+      The violin plot presents the distribution of ratings for apps with certain criteria: at least 10 reviews, a name containing the letter "C," and a rating below 4.0. It highlights the spread of ratings within each category, showing where most ratings fall and allowing for comparisons across categories.
+    </p>
+  </div>
+
+  <!-- Conclusions Section -->
+  <div class="conclusions">
+    <h3>Conclusions</h3>
+    <ul>
+      <li>The <strong>Top 5 Categories by Installs</strong> visualization indicates that certain categories, like games and social media, dominate the market in terms of user downloads.</li>
+      <li>The <strong>Bubble Chart</strong> allows for a more granular view, where we can see not only the number of installs but also the individual popularity of apps within each category, with larger bubbles indicating more popular apps.</li>
+      <li>The <strong>Conditional Bar Chart</strong> serves as a reminder of the importance of time-based restrictions when dealing with data. By limiting access during certain hours, we can optimize server performance and manage user expectations effectively.</li>
+      <li>The <strong>Violin Plot</strong> shows that certain app categories have a wider range of ratings, which might point to higher user dissatisfaction or varying experiences with the apps. It is important to monitor these trends to improve user satisfaction.</li>
+      <li>Overall, these visualizations provide valuable insights into user behavior, app popularity, and performance metrics. They can guide decisions on app development, marketing strategies, and user experience improvements.</li>
+    </ul>
+  </div>
+
+</body>
+</html>
